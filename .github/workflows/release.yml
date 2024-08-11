@@ -6,11 +6,11 @@ on:
       - "*"
 
 env:
-  PLUGIN_NAME: your-plugin-id # Change this to match the id of your plugin.
+  PLUGIN_NAME: obsidian-smart-completion-plugin-for-hexo # Change this to match the id of your plugin.
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
