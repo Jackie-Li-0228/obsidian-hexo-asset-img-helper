@@ -1,5 +1,4 @@
-import { get } from 'http';
-import { App, DataAdapter, Editor, FileSystemAdapter, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting ,TFile,TFolder,normalizePath} from 'obsidian';
+import { App,, Editor, Plugin, PluginSettingTab, Setting ,TFile,TFolder} from 'obsidian';
 
 interface MyPluginSettings {
 	mySetting: string;
