@@ -1,4 +1,4 @@
-import { App,, Editor, Plugin, PluginSettingTab, Setting ,TFile,TFolder} from 'obsidian';
+import { App, Editor, Plugin, PluginSettingTab, Setting ,TFile,TFolder} from 'obsidian';
 
 interface MyPluginSettings {
 	mySetting: string;
