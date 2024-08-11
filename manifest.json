@@ -1,9 +1,9 @@
 {
 	"id": "obsidian-smart-completion-plugin-for-hexo",
 	"name": "Smart Completion Plugin for Hexo",
-	"version": "1.0.0",
+	"version": "0.1.0",
 	"minAppVersion": "0.15.0",
-	"description": "Helps you automatically complete image file names when using hexo-asset-img for image insertion.",
+	"description": "Helps you automatically complete hexo blog posts with the <!--more--> identifier and the <% asset_img sample.jpg %> format string specified by hexo.",
 	"author": "Jackie-Li-0228",
 	"authorUrl": "https://github.com/Jackie-Li-0228",
 	"fundingUrl": false,

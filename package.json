@@ -1,7 +1,7 @@
 {
 	"name": "obsidian-smart-completion-plugin-for-hexo",
-	"version": "1.0.0",
-	"description": "Helps you automatically complete image file names when using hexo-asset-img for image insertion. ",
+	"version": "0.1.0",
+	"description": "Helps you automatically complete hexo blog posts with the <!--more--> identifier and the <% asset_img sample.jpg %> format string specified by hexo.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
