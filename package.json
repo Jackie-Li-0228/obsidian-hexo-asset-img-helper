@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-smart-completion-plugin-for-hexo",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "Helps you automatically complete image file names when using hexo-asset-img for image insertion. ",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
