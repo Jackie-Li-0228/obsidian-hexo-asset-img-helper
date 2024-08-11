@@ -8,8 +8,6 @@
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
 
-
-
 # Obsidian Smart Completion Plugin For Hexo
 
 ## Introduction
@@ -28,7 +26,7 @@ Once installed, the plugin works out of the box with the following features:
    When you type `<!`, the plugin automatically pops up the `<!--more-->` complementary suggestions; when you type `<%`, the plugin will automatically search the folder in the current directory with the same name as this Markdown file and pop up a list of complementary suggestions in `<% asset_img sample.jpg%>` format.
 
 
->### **Very Important Note:**
+>### [!Very Important Note]
 >Hexo naturally supports two types of resource management: global resource folder and article resource folder. See [documentation](https://hexo.io/zh-cn/docs/asset-folders) for more details.
 >**The plugin only supports these two management methods:**
 >
