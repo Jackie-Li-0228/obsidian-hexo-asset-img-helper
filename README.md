@@ -16,6 +16,8 @@ This is a tool to help you make it easier to complement hexo blog posts with the
 
 It automatically suggests completions for specific patterns like `<%` and `<!` in markdown files. After detecting the identifier at the cursor, the plugin pops up `<!--more-->` or `<% asset_img sample.jpg %>` format autocomplete suggestions.
 
+_**This plugin does not provide any API keys.**_
+
 ## Usage Instructions and Installation
 
 ### Usage
