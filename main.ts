@@ -1,24 +1,23 @@
 import { App, Editor, Plugin, PluginSettingTab, Setting ,TFile,TFolder} from 'obsidian';
 
-interface MyPluginSettings {
+interface PluginSettings {
 	mySetting: string;
 }
 
-const DEFAULT_SETTINGS: MyPluginSettings = {
+const DEFAULT_SETTINGS: PluginSettings = {
 	mySetting: 'default'
 }
 
-export default class MyPlugin extends Plugin {
-	settings: MyPluginSettings;
+export default class Smart_Completion_Plugin extends Plugin {
+	settings: PluginSettings;
 
 	async onload() {
 		await this.loadSettings();
 
 		// This adds a settings tab so the user can configure various aspects of the plugin
-		this.addSettingTab(new SampleSettingTab(this.app, this));
+		this.addSettingTab(new SettingTab(this.app, this));
 
 		// When registering intervals, this function will automatically clear the interval when the plugin is disabled.
-		this.registerInterval(window.setInterval(() => console.log('setInterval'), 5 * 60 * 1000));
 		this.registerEditorSuggest(new MySuggestion(this));
 	}
 
@@ -34,10 +33,10 @@ export default class MyPlugin extends Plugin {
 		await this.saveData(this.settings);
 	}
 }
-class SampleSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+class SettingTab extends PluginSettingTab {
+	plugin: Smart_Completion_Plugin;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: Smart_Completion_Plugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
@@ -62,9 +61,9 @@ class SampleSettingTab extends PluginSettingTab {
 
 import { EditorSuggest,EditorPosition,EditorSuggestContext,EditorSuggestTriggerInfo } from 'obsidian';
 class MySuggestion extends EditorSuggest<string> {
-	plugin: MyPlugin;
+	plugin: Smart_Completion_Plugin;
 
-	constructor	(plugin: MyPlugin) {
+	constructor	(plugin: Smart_Completion_Plugin) {
 		super(plugin.app);
 		this.plugin = plugin;
 	}
