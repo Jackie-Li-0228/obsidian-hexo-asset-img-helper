@@ -1,24 +1,25 @@
 import { App, Editor, Plugin, PluginSettingTab, Setting ,TFile,TFolder} from 'obsidian';
 
-interface PluginSettings {
+interface SmartCompletionSettings {
 	mySetting: string;
 }
 
-const DEFAULT_SETTINGS: PluginSettings = {
+const DEFAULT_SETTINGS: SmartCompletionSettings = {
 	mySetting: 'default'
 }
 
-export default class Smart_Completion_Plugin extends Plugin {
-	settings: PluginSettings;
+export default class SmartCompletion extends Plugin {
+	settings: SmartCompletionSettings;
 
 	async onload() {
 		await this.loadSettings();
 
 		// This adds a settings tab so the user can configure various aspects of the plugin
-		this.addSettingTab(new SettingTab(this.app, this));
+		this.addSettingTab(new SmartCompletionSettingTab(this.app, this));
 
 		// When registering intervals, this function will automatically clear the interval when the plugin is disabled.
-		this.registerEditorSuggest(new MySuggestion(this));
+		this.registerInterval(window.setInterval(() => console.log('setInterval'), 5 * 60 * 1000));
+		this.registerEditorSuggest(new SmartCompletionSuggestion(this));
 	}
 
 	onunload() {
@@ -33,10 +34,10 @@ export default class Smart_Completion_Plugin extends Plugin {
 		await this.saveData(this.settings);
 	}
 }
-class SettingTab extends PluginSettingTab {
-	plugin: Smart_Completion_Plugin;
+class SmartCompletionSettingTab extends PluginSettingTab {
+	plugin: SmartCompletion;
 
-	constructor(app: App, plugin: Smart_Completion_Plugin) {
+	constructor(app: App, plugin: SmartCompletion) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
@@ -60,10 +61,10 @@ class SettingTab extends PluginSettingTab {
 }
 
 import { EditorSuggest,EditorPosition,EditorSuggestContext,EditorSuggestTriggerInfo } from 'obsidian';
-class MySuggestion extends EditorSuggest<string> {
-	plugin: Smart_Completion_Plugin;
+class SmartCompletionSuggestion extends EditorSuggest<string> {
+	plugin: SmartCompletion;
 
-	constructor	(plugin: Smart_Completion_Plugin) {
+	constructor	(plugin: SmartCompletion) {
 		super(plugin.app);
 		this.plugin = plugin;
 	}
